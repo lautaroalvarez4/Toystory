@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <body style="background-color: #87CEEB;"></body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-10 mx-auto">
+
+                <div class="text-center">
+                    <img src="img/logo.png" class="img-fluid rounded" alt="..." style="max-height: 150px;">
+                </div>
+
+
+                <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#integrantes">Integrantes</a>
+                                </li>
+                                <li class="nav-item">
+
+                                    <a class="nav-link" aria-current="page" href="#proceso">Proceso</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#aventura">Aventura grafica</a>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+
+
+                <div class="bg-white p-4 rounded shadow my-4">
+
+                    <p class="fw-lighter">Toy Story 3 es la tercera película de la saga de animación Toy Story. La
+                        película fue distribuida en cines en formato analógico, digital y Disney Digital 3D.</p>
+                    <p class="fw-lighter">es una película donde los juguetes de Andy son accidentalmente donados a una
+                        guardería en lugar de ser guardados en el ático. La trama sigue sus esfuerzos por escapar de la
+                        guardería y reunirse con Andy antes de que se vaya a la universidad.</p>
+
+                    <div class="text-center">
+                        <img src="img/personajes.jpeg" class="img-fluid rounded" alt="..." style="max-height: 150px;">
+                    </div>
+
+                    <h2 id="integrantes" class="mt-5">Integrantes</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item fs-3"> Alvarez Lautaro</li>
+
+                    </ul>
+
+                    <div class="text-center">
+                        <img src="img/personajesdos.jpeg" class="img-fluid rounded" alt="..."
+                            style="max-height: 150px;">
+                    </div>
+
+                    <!-- Button trigger modal -->
+                    <div class="text-center">
+                        <button type="button" id="proceso" class="btn btn-primary" data-bs-toggle="modal"
+                            style=" margin: 10px;" data-bs-target="#staticBackdrop">
+                            Proceso
+                        </button>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Proceso</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="fw-lighter"> Para el proceso realicé un diagrama de flujo en el cual
+                                        detallé qué iba a pasar en cada pantalla de la aventura gráfica, y que al
+                                        momento de realizarla fuera más fácil el proceso </p>
+
+                                    <img src="img/diagrama.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
+
+                                    <p class="fw-lighter"> para explicar el codigo que use en P5*JS lo voy a hacer por
+                                        bloques para que se entienda la estructura </p>
+
+                                    <div class="container bg-white p-4 rounded shadow my-4">
+                                        <div class="row">
+
+                                            <p class="fw-lighter">
+                                            <h5> Bloque 1: Variables Globales;</h5>
+                                            Estas variables definen el estado actual del juego, qué pantalla se está
+                                            mostrando, y los recursos que se van a usar </p>
+
+                                            <p class="fw-lighter">
+                                            <h6>pantalla 0</h6> Indica el índice de la pantalla que se está mostrando
+                                            actualmente.
+
+                                            <h6>fondos [] </h6>(Array vacío) Almacenará todas las imágenes fondo que se
+                                            usan en las distintas pantallas.
+
+                                            <h6> pantallas [] </h6>(Array vacío) Es la estructura central del juego.
+                                            Contiene la configuración (texto, tipo, botones, destino) de cada una de las
+                                            escenas o pantallas.
+
+
+                                            <h6> tiempoInicio 0 </h6>Guarda el momento en milisegundos en que se inició
+                                            la pantalla actual. Se usa para las pantallas con límite de tiempo.
+
+
+                                            <h6>musica </h6>Almacenará el archivo de audio de fondo.
+
+                                            <h6>musicaEncendida false </h6> Un boolean que indica si la música de fondo
+                                            está reproduciéndose o no.
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="container bg-white p-4 rounded shadow my-4">
+                                        <div class="row">
+
+                                            <p class="fw-lighter">
+
+
+                                            <h5> Bloque 2: preload()</h5>
+                                            se ejecuta antes de que comience el juego. Su propósito es asegurar que
+                                            todas las imágenes y el sonido estén cargados y listos para usarse. </p>
+
+
+                                            <p class="fw-lighter">
+                                            <h6>Imágenes:</h6> Carga 15 archivos de imagen desde la carpeta assets/ y
+                                            los guarda en el array fondos.
+
+                                            <h6>Música: </h6> Carga el archivo de sonido y lo guarda en la variable
+                                            musica.
+                                        </div>
+                                    </div>
+                                    <div class="container bg-white p-4 rounded shadow my-4">
+                                        <div class="row">
+
+                                            <p class="fw-lighter">
+
+
+                                            <h5> Bloque 3: setup() </h5>
+                                            se ejecuta una sola vez al inicio del programa. </p>
+
+
+                                            <p class="fw-lighter">
+                                            <h6>createCanvas:</h6> Crea el lienzo el cual establece el tamaño de la
+                                            ventana del juego.
+                                            .
+                                            <h6>textFont(): </h6> establece la tipografía
+
+                                            <h6>pantallas </h6> Llama al array para definir la lógica de cada escena del
+                                            juego
+
+                                            <p> Cada elemento es un array que define el tipo de pantalla: ["tipo",
+                                                duración, destino, texto, botones].
+                                            </p>
+                                            <h6>Tipo tiempo:</h6> La pantalla cambia automáticamente a otro destino
+                                            después
+                                            de una duracion en milisegundos.
+
+                                            <h6> Tipo boton: </h6> La pantalla espera la interacción del usuario a
+                                            través de los botones.
+
+                                            <h6> tiempoInicio = millis()</h6> Establece el tiempo de inicio y registra
+                                            el momento para el control de las pantallas de tipo tiempo.
+
+                                        </div>
+                                    </div>
+                                    <div class="container bg-white p-4 rounded shadow my-4">
+                                        <div class="row">
+
+                                            <p class="fw-lighter">
+
+
+                                            <h5> Bloque 4: draw() </h5>
+                                            se ejecuta constantemente y es la responsable de dibujar todo lo que se ve
+                                            en pantalla y de controlar la lógica continua. </p>
+
+
+                                            <p class="fw-lighter">
+                                            <h6>Dibujar el Fondo:</h6>
+                                            Dibuja la imagen de fondo y La imagen cambia según el valor de la variable
+                                            pantalla.
+
+
+                                            <h6> Mostrar el Texto </h6> Si la configuración de la pantalla tiene texto,
+                                            lo dibuja centrado en la parte superior de la pantalla con color blanco y un
+                                            borde negro.
+
+                                            <h6>Lógica de Pantalla </h6> Si es tipo boton recorre el array botones,
+                                            dibuja un rectángulo semitransparente por cada botón y ademas dibuja el
+                                            texto del botón en el centro de ese rectángulo.
+
+                                            Si es tipo tiempo Comprueba si ha pasado la duracion establecida desde el
+                                            tiempoInicio. Si paso el tiempo, cambia la variable pantalla a la siguiente
+
+                                        </div>
+                                    </div>
+
+                                    <div class="container bg-white p-4 rounded shadow my-4">
+                                        <div class="row">
+
+                                            <p class="fw-lighter">
+
+
+                                            <h5> Bloque 5: mousePressed()</h5> se activa cada vez que el usuario hace
+                                            clic con el mouse.
+                                            <p class="fw-lighter">
+                                            <p>Solo actúa si la pantalla actual es de tipo boton. Recorre todos los
+                                                botones definidos para esa pantalla y comprueba si la posición del ratón
+                                                (mouseX, mouseY) está dentro de las coordenadas de un botón específico.
+                                            </p>
+
+                                            <h6> Botón "Música": </h6> Si se hace clic en el botón de música, activa o
+                                            desactiva la reproducción del audio
+
+                                            <h6>Otros Botones:</h6> Si el botón tiene un destino, cambia la pantalla,
+                                            llevando al jugador a la siguiente escena de la historia, y reinicia
+                                            tiempoInicio.
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <h2 id="aventura" class="mt-5">Aventura grafica</h2>
+
+                    <div class="row">
+                        <iframe src="p5/index.html" frameborder="0" height="490" width="650"></iframe>
+                    </div>
+
+                </div>
+
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+                    crossorigin="anonymous"></script>
+</body>
+
+</html>

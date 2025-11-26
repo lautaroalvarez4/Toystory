@@ -137,3 +137,8 @@ function mousePressed() {
     }
   }
 }
+
+function touchStarted() {
+  mousePressed();
+  return false;
+}
